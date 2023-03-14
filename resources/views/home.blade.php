@@ -71,7 +71,7 @@
                     </time>
                     <a href="#" class="author">
                         <span class="name">{{ $article->author()->username }}</span>
-                        <img src="images/avatar.jpg" alt="" />
+                        <img src="{{ $article->author()->image_url }}" alt="" />
                     </a>
                 </div>
             </header>
