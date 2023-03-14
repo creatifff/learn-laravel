@@ -20,8 +20,14 @@ class Article extends Model
         'author_id',
     ];
 
+    // Получения пользователя привязанного к статье
     public function author() {
         return $this->hasOne(User::class, 'id', 'author_id')->first();
+    }
+
+    //    Статья имеет много комментариев
+    public function comments() {
+        return $this->hasMany(Comment::class, 'article_id', 'id')->get();
     }
 
     public function getImageUrlAttribute() {

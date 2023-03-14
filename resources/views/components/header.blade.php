@@ -1,13 +1,13 @@
 <!-- Header -->
 <header id="header">
-    <h1><a href="index.html">Future Imperfect</a></h1>
+    <h1><a href="{{ route('home') }}">Future Imperfect</a></h1>
     <nav class="links">
         <ul>
-            <li><a href="">Главная</a></li>
+            <li><a href="{{ route('home') }}">Главная</a></li>
 
             @guest
-                <li><a href="">Регистрация</a></li>
-                <li><a href="">Авторизация</a></li>
+                <li><a href="{{ route('signup') }}">Регистрация</a></li>
+                <li><a href="{{ route('signin') }}">Авторизация</a></li>
             @endguest
 
             @auth
@@ -20,7 +20,7 @@
         <ul>
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="#">
+                <form id="search" method="get" action="/">
                     <input type="text" name="query" placeholder="Search" />
                 </form>
             </li>
